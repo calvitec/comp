@@ -288,9 +288,8 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Section
-\*----------------------------*/
 
+/* Section Styling */
 .section {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -299,6 +298,7 @@ textarea.input {
   border-radius: 8px; /* Rounded corners for a smooth look */
 }
 
+/* Section Title */
 .section-title {
   position: relative;
   margin-bottom: 30px;
@@ -319,6 +319,7 @@ textarea.input {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 3D text shadow effect */
 }
 
+/* Navigation Section */
 .section-title .section-nav {
   float: right;
   margin-top: -40px; /* Align navigation with title */
@@ -338,6 +339,7 @@ textarea.input {
   margin-right: 0px;
 }
 
+/* Tab Nav Links */
 .section-tab-nav li a {
   font-weight: 700;
   color: #8D99AE;
@@ -349,6 +351,7 @@ textarea.input {
   transition: all 0.3s ease;
 }
 
+/* Hover Effects */
 .section-tab-nav li a:hover {
   color: #fff;
   background-color: #D10024;
@@ -356,30 +359,30 @@ textarea.input {
   transform: translateY(-3px); /* Lift up the button slightly */
 }
 
+/* Active State */
+.section-tab-nav li.active a {
+  color: #D10024;
+}
+
+/* Underline Animation */
 .section-tab-nav li a:after {
   content: "";
   display: block;
   width: 0%;
   height: 2px;
   background-color: #D10024;
-  -webkit-transition: 0.3s width ease;
   transition: 0.3s width ease;
 }
 
-.section-tab-nav li.active a {
-  color: #D10024;
-}
-
-.section-tab-nav li a:hover:after, .section-tab-nav li a:focus:after, .section-tab-nav li.active a:after {
+.section-tab-nav li a:hover:after,
+.section-tab-nav li a:focus:after,
+.section-tab-nav li.active a:after {
   width: 100%;
 }
 
-.section-title .section-nav .products-slick-nav {
-  top: 0px;
-  right: 0px;
-}
-
-.products-slick-nav .slick-prev, .products-slick-nav .slick-next {
+/* Products Slick Navigation */
+.products-slick-nav .slick-prev,
+.products-slick-nav .slick-next {
   background-color: #D10024;
   color: white;
   padding: 10px;
@@ -388,20 +391,21 @@ textarea.input {
   transition: all 0.3s ease;
 }
 
-.products-slick-nav .slick-prev:hover, .products-slick-nav .slick-next:hover {
+.products-slick-nav .slick-prev:hover,
+.products-slick-nav .slick-next:hover {
   background-color: #ff5252;
   transform: translateY(-2px); /* Slight 3D lift effect */
 }
 
+/*----------------------------*/
+
 
 /*----------------------------*\
-	Breadcrumb
-\*----------------------------*/
-
+	/* Breadcrumb Styling */
 #breadcrumb {
   padding: 30px 0px;
-  background: #FBFBFC;
-  border-bottom: 1px solid #E4E7ED;
+  background: linear-gradient(135deg, #FBFBFC, #E9ECEF); /* Gradient background for depth */
+  border-bottom: 1px solid #D1D5DB; /* Lighter border color */
   margin-bottom: 30px;
 }
 
@@ -411,6 +415,9 @@ textarea.input {
   margin-bottom: 0px;
   margin-right: 15px;
   text-transform: uppercase;
+  font-size: 14px; /* Increased font size for prominence */
+  font-weight: bold; /* Bold header for emphasis */
+  color: #333; /* Darker color for better contrast */
 }
 
 #breadcrumb .breadcrumb-tree {
@@ -422,26 +429,30 @@ textarea.input {
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
+  color: #555; /* Darker color for better readability */
 }
 
-#breadcrumb .breadcrumb-tree li+li {
+#breadcrumb .breadcrumb-tree li + li {
   margin-left: 10px;
 }
 
-#breadcrumb .breadcrumb-tree li+li:before {
+#breadcrumb .breadcrumb-tree li + li:before {
   content: '/';
   display: inline-block;
-  color: #8D99AE;
+  color: #8D99AE; /* Neutral color for the separator */
   margin-right: 10px;
 }
 
 #breadcrumb .breadcrumb-tree li a {
-  color: #8D99AE;
+  color: #007BFF; /* Bootstrap primary color for links */
+  text-decoration: none; /* Remove underline for a cleaner look */
 }
 
 #breadcrumb .breadcrumb-tree li a:hover {
-  color: #D10024;
+  color: #D10024; /* Highlight color on hover */
+  text-decoration: underline; /* Underline on hover for clarity */
 }
+
 
 /*=========================================================
 	02 -> HEADER
@@ -498,10 +509,7 @@ textarea.input {
   display: block;
 }
 
-/*----------------------------*\
-	Search
-\*----------------------------*/
-
+/* Search Section */
 .header-search {
   padding: 15px 0px;
 }
@@ -513,58 +521,65 @@ textarea.input {
 .header-search form .input-select {
   margin-right: -4px;
   border-radius: 40px 0px 0px 40px;
+  background: #E9ECEF; /* Light background for the input select */
+  border: 1px solid #D1D5DB; /* Soft border for depth */
 }
 
 .header-search form .input {
   width: calc(100% - 260px);
   margin-right: -4px;
+  border: 1px solid #D1D5DB; /* Soft border for input field */
+  border-radius: 40px; /* Rounded corners for a smooth look */
+  padding: 10px; /* Padding for better text positioning */
 }
 
 .header-search form .search-btn {
   height: 40px;
   width: 100px;
-  background: #D10024;
-  color: #FFF;
+  background: #D10024; /* Primary color for button */
+  color: #FFF; /* White text for contrast */
   font-weight: 700;
   border: none;
   border-radius: 0px 40px 40px 0px;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-/*----------------------------*\
-	Cart
-\*----------------------------*/
+.header-search form .search-btn:hover {
+  background: #FF6F61; /* Lighter shade on hover */
+}
 
+/* Cart Section */
 .header-ctn {
   float: right;
   padding: 15px 0px;
 }
 
-.header-ctn>div {
+.header-ctn > div {
   display: inline-block;
 }
 
-.header-ctn>div+div {
+.header-ctn > div + div {
   margin-left: 15px;
 }
 
-.header-ctn>div>a {
+.header-ctn > div > a {
   display: block;
   position: relative;
   width: 90px;
   text-align: center;
-  color: #FFF;
+  color: #FFF; /* White text for contrast */
 }
 
-.header-ctn>div>a>i {
+.header-ctn > div > a > i {
   display: block;
   font-size: 18px;
 }
 
-.header-ctn>div>a>span {
+.header-ctn > div > a > span {
   font-size: 12px;
 }
 
-.header-ctn>div>a>.qty {
+.header-ctn > div > a > .qty {
   position: absolute;
   right: 15px;
   top: -10px;
@@ -574,8 +589,8 @@ textarea.input {
   text-align: center;
   border-radius: 50%;
   font-size: 10px;
-  color: #FFF;
-  background-color: #D10024;
+  color: #FFF; /* White text for quantity */
+  background-color: #D10024; /* Primary color for quantity badge */
 }
 
 .header-ctn .menu-toggle {
@@ -585,17 +600,17 @@ textarea.input {
 .cart-dropdown {
   position: absolute;
   width: 300px;
-  background: #FFF;
+  background: #FFF; /* White background for dropdown */
   padding: 15px;
-  -webkit-box-shadow: 0px 0px 0px 2px #E4E7ED;
-  box-shadow: 0px 0px 0px 2px #E4E7ED;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
   z-index: 99;
   right: 0;
   opacity: 0;
   visibility: hidden;
+  transition: opacity 0.3s ease; /* Smooth transition for dropdown */
 }
 
-.dropdown.open>.cart-dropdown {
+.dropdown.open > .cart-dropdown {
   opacity: 1;
   visibility: visible;
 }
@@ -608,8 +623,7 @@ textarea.input {
 
 .cart-dropdown .cart-list .product-widget {
   padding: 0px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  box-shadow: none; /* Remove shadow for a cleaner look */
 }
 
 .cart-dropdown .cart-list .product-widget:last-child {
@@ -622,32 +636,31 @@ textarea.input {
 }
 
 .cart-dropdown .cart-list .product-widget .product-body .product-price {
-  color: #2B2D42;
+  color: #2B2D42; /* Dark color for product price */
 }
 
 .cart-dropdown .cart-btns {
   margin: 0px -17px -17px;
 }
 
-.cart-dropdown .cart-btns>a {
+.cart-dropdown .cart-btns > a {
   display: inline-block;
   width: calc(50% - 0px);
   padding: 12px;
-  background-color: #D10024;
-  color: #FFF;
+  background-color: #D10024; /* Primary color for buttons */
+  color: #FFF; /* White text for contrast */
   text-align: center;
   font-weight: 700;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
+  transition: background-color 0.2s ease; /* Smooth transition for hover effect */
 }
 
-.cart-dropdown .cart-btns>a:first-child {
+.cart-dropdown .cart-btns > a:first-child {
   margin-right: -4px;
-  background-color: #1e1f29;
+  background-color: #1e1f29; /* Dark background for the first button */
 }
 
-.cart-dropdown .cart-btns>a:hover {
-  opacity: 0.9;
+.cart-dropdown .cart-btns > a:hover {
+  opacity: 0.9; /* Slightly reduce opacity on hover */
 }
 
 .cart-dropdown .cart-summary {
@@ -656,7 +669,8 @@ textarea.input {
   padding-bottom: 15px;
 }
 
-/*=========================================================
+
+/*--===================================
 	03 -> Navigation
 ===========================================================*/
 
