@@ -10,6 +10,7 @@
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+              <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
 
 		<!-- Bootstrap -->
 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -1035,6 +1036,34 @@
 			<!-- /container -->
 		</div>
 		<!-- /NEWSLETTER -->
+		<div id="paypal-button-container"></div>
+<script>
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            // Create an order with the amount and details
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: '10.00'  // The amount to be charged (change as needed)
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            // Capture the order when the user approves it
+            return actions.order.capture().then(function(details) {
+                // Handle success - show a success message or take further actions
+                alert('Payment completed by ' + details.payer.name.given_name);
+                // Optionally send payment details to your server for processing
+            });
+        },
+        onError: function(err) {
+            // Handle any errors that occur during the payment process
+            console.error('Error during PayPal transaction:', err);
+        }
+    }).render('#paypal-button-container');  // This renders the PayPal button in the container
+</script>
+
 
 		<!-- FOOTER -->
 		<footer id="footer">
